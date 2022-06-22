@@ -1,6 +1,5 @@
 import React from "react";
 import Post from "../../components/Post/Post";
-import NavBar from "./NavBar/NavBar";
 
 export default function Home() {
   return (
