@@ -1,26 +1,21 @@
-import React from "react";
+import React, { memo } from "react";
+import Avatar from "../avatar/Avatar";
 
-export default function Comment() {
+function Comment({ comment }) {
+  const { name, body } = comment;
   return (
-    <div className="comment-list d-flex mt-3">
+    <div className="comment-list d-flex mt-3 align-items-start">
       <div className="d-flex align-items-center">
-        <img
-          src="https://ui-avatars.com/api/?name=hohoka"
-          alt="avatar"
-          className="rounded-circle"
-          width={60}
-        />
+        <Avatar name={name} />
       </div>
       <div className="comment-item ms-2 rounded-5 overflow-hidden">
         <div className="comment-content px-4 py-2">
-          <p className="mb-0 fs-6 fw-bold">id labore ex et quam laborum</p>
-          <span className="mb-0 fs-6">
-            laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora
-            quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam
-            sapiente accusantium
-          </span>
+          <p className="mb-0 fs-6 fw-bold">{name}</p>
+          <span className="mb-0 fs-6">{body}</span>
         </div>
       </div>
     </div>
   );
 }
+
+export default Comment;
